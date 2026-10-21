@@ -1,0 +1,29 @@
+INVITACIÓN INTERACTIVA — 70 AÑOS DE SILVIA ORÉ RODRÍGUEZ
+
+ARCHIVOS:
+  index.html        Página interactiva y responsiva
+  assets/sobre.png  Sobre original
+  assets/diptico.png Invitación interior original
+  assets/musica.mp3 Música instrumental proporcionada
+
+PARA VERLA:
+  Abre index.html con Chrome, Edge, Safari o Firefox.
+  Haz clic en el sobre o en «Abrir mi invitación» para comenzar.
+  El audio empieza al pulsar (restricción habitual de navegadores).
+  «Ver en grande» permite leer el diseño ampliado, incluso en celulares.
+  «Volver a ver» repite la animación.
+
+PARA PUBLICARLA EN INTERNET:
+  Descomprime este ZIP y sube index.html y la carpeta assets (sin cambiar
+  sus nombres ni su estructura) a un alojamiento web estático.
+  Después podrás compartir el enlace público por WhatsApp o redes sociales.
+
+VERSIÓN SIN DEPENDENCIAS:
+  También se entregó por separado el archivo
+  «Invitacion_Interactiva_Silvia_70.html», que integra las imágenes y la
+  música, y puede abrirse directamente en el navegador sin Internet.
+
+NOTAS:
+  El retrato y el diseño interior original no han sido retocados.
+  Al publicar música en Internet, verifica que tienes los permisos de uso
+  correspondientes.

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#23131b">
+<meta name="description" content="Una invitación muy especial para celebrar los 70 años de Silvia Oré Rodríguez. Sábado 7 de noviembre de 2026.">
+<title>Mis 70 años · Silvia Oré Rodríguez</title>
+<style>
+:root{--gold:#d7b16c;--goldlight:#ffe2a4;--wine:#6c2038;--cream:#fff5dc;--rose:#e4a2a3;color-scheme:dark}
+*{box-sizing:border-box}
+html{height:100%;background:#24141c;scroll-behavior:smooth}
+body{margin:0;min-height:100%;background:radial-gradient(ellipse at 50% 53%,#74344a 0%,#442230 38%,#25151e 76%,#160f16 100%);font-family:Georgia,"Times New Roman",serif;color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible,.envelope:focus-visible{outline:3px solid #f9db9a;outline-offset:7px}
+.ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.ambient:before{content:"";position:absolute;inset:-38%;background:conic-gradient(from 12deg at 50% 50%,transparent 0deg,rgba(255,207,151,.045) 37deg,transparent 68deg,rgba(241,157,148,.04) 126deg,transparent 173deg,rgba(250,214,148,.06) 231deg,transparent 278deg);animation:ambientTurn 42s linear infinite}
+.ambient:after{content:"";position:absolute;left:50%;top:48%;width:min(100vw,1050px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,214,143,.11) 0%,rgba(231,144,137,.065) 38%,transparent 71%);filter:blur(25px)}
+.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#ffe9bd;box-shadow:0 0 12px 2px rgba(255,222,145,.5);opacity:.1;animation:twinkle var(--dur) ease-in-out infinite alternate;animation-delay:var(--delay)}
+@keyframes twinkle{0%{opacity:.08;transform:translateY(8px) scale(.6)}100%{opacity:.8;transform:translateY(-11px) scale(1.1)}}
+@keyframes ambientTurn{to{transform:rotate(360deg)}}
+.page{position:relative;min-height:100dvh;display:flex;flex-direction:column;align-items:center;isolation:isolate}
+.page:before,.page:after{content:"";position:fixed;z-index:-1;pointer-events:none;width:29vw;height:29vw;border:1px solid rgba(229,193,140,.11);border-radius:50%;top:45%;transform:translateY(-50%)}
+.page:before{left:-19vw;box-shadow:0 0 0 15px rgba(230,189,116,.018),0 0 0 48px rgba(230,189,116,.016)}
+.page:after{right:-19vw;box-shadow:0 0 0 15px rgba(230,189,116,.018),0 0 0 48px rgba(230,189,116,.016)}
+.top-bar{z-index:20;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(18px,4.4vw,65px);gap:10px}
+.monogram{display:flex;align-items:center;gap:9px;color:#f6ddaa;letter-spacing:.19em;font:700 13px Georgia,serif}
+.monogram .seal{border:1px solid rgba(244,212,158,.5);width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font:italic 21px Georgia,serif;letter-spacing:0}
+.music-toggle{display:flex;align-items:center;gap:8px;border:1px solid rgba(239,204,157,.35);background:rgba(26,14,24,.3);border-radius:100px;color:#fae6bd;padding:10px 16px;backdrop-filter:blur(10px);font-family:Arial,sans-serif;font-size:12px;letter-spacing:.04em;transition:border-color .25s,background .25s}
+.music-toggle:hover{background:rgba(250,230,200,.09);border-color:var(--goldlight)}
+.music-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.music-toggle .on-icon{display:none}.music-toggle.playing .on-icon{display:block}.music-toggle.playing .off-icon{display:none}
+.intro{text-align:center;z-index:2;padding:0 18px;transition:opacity .8s,transform .8s}
+.eyebrow{font:11px Arial,sans-serif;color:#ecd3a2;letter-spacing:.36em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:15px;margin:8px 0 12px}
+.eyebrow:before,.eyebrow:after{content:"";width:33px;height:1px;background:linear-gradient(90deg,transparent,#bda06e)}.eyebrow:after{transform:rotate(180deg)}
+h1{font-weight:400;letter-spacing:-.035em;font-size:clamp(30px,3vw,48px);line-height:1.16;margin:0;text-shadow:0 2px 15px rgba(0,0,0,.1)}
+h1 em{font-style:italic;color:#f1cb95}
+.intro-sub{font:13px Arial,sans-serif;color:#e3c3b6;letter-spacing:.11em;margin:14px 0 0}
+.stage{position:relative;width:100%;max-width:1450px;height:clamp(395px,61dvh,670px);perspective:1600px;overflow:visible;flex:1 0 auto;min-height:350px}
+.halo{position:absolute;left:50%;top:51%;width:min(70vw,700px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(255,214,157,.17),transparent 64%);filter:blur(24px);opacity:.8;pointer-events:none;transition:opacity 2s,transform 2s}
+.stage:after{content:"";position:absolute;top:89%;left:50%;width:min(600px,73vw);height:29px;background:rgba(0,0,0,.28);filter:blur(23px);border-radius:50%;transform:translateX(-50%);z-index:0;transition:opacity 1.5s}
+.envelope{position:absolute;left:50%;top:51%;width:clamp(205px,min(34vw,43dvh),385px);aspect-ratio:937 / 1365;transform:translate3d(-50%,-50%,0) rotateY(-3deg) rotateX(3deg);z-index:5;filter:drop-shadow(0 22px 24px rgba(8,2,11,.42));transition:transform 2.2s cubic-bezier(.22,.75,.18,1),opacity 1.7s ease,filter 1.7s ease;transform-style:preserve-3d;cursor:pointer;border-radius:8px;outline-offset:10px;display:block}
+.envelope img{width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
+.envelope:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(114deg,transparent 20%,rgba(255,255,255,.17) 40%,transparent 53%);mask-image:linear-gradient(black,black);animation:sheen 5.5s ease-in-out infinite;mix-blend-mode:screen}
+@keyframes sheen{0%,60%,100%{opacity:0;transform:translateX(-35%)}75%{opacity:1;transform:translateX(35%)}}
+.envelope-nudge{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);color:#f5dfb8;font:11px Arial,sans-serif;white-space:nowrap;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 0 10px #200f17;animation:subtleBounce 2.5s ease-in-out infinite}
+@keyframes subtleBounce{50%{transform:translate(-50%,-5px)}}
+.book{position:absolute;left:50%;top:50%;width:min(91vw,900px,calc(86dvh - 45px));aspect-ratio:1491/1055;z-index:3;transform-style:preserve-3d;transform:translate3d(-75%,calc(-50% + 165px),-180px) rotateY(-12deg) scale(.60);opacity:0;pointer-events:none;transition:transform 1.9s cubic-bezier(.2,.74,.14,1),opacity .9s ease,filter 1.4s;filter:drop-shadow(0 25px 25px rgba(14,6,9,.52));will-change:transform,opacity}
+.book:before{content:"";position:absolute;inset:1% -1%;z-index:-1;background:rgba(255,206,146,.28);filter:blur(25px);border-radius:10px}
+.right-page,.left-page{position:absolute;top:0;width:50%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.right-page{right:0;overflow:hidden;box-shadow:4px 13px 22px rgba(0,0,0,.2)}
+.left-page{left:0;transform-origin:100% 50%;transform-style:preserve-3d;transform:rotateY(-179.5deg);transition:transform 2.05s cubic-bezier(.19,.74,.12,1);z-index:2}
+.left-page-front,.left-page-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.left-page-front{overflow:hidden;box-shadow:-8px 12px 18px rgba(0,0,0,.1)}
+.page-image{position:absolute;top:0;width:200%;max-width:none;height:100%;object-fit:fill;pointer-events:none;user-select:none;-webkit-user-drag:none}.right-page .page-image{right:0}.left-page-front .page-image{left:0}
+.left-page-back{transform:rotateY(180deg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;border:5px double #ca9e50;background:radial-gradient(circle at 25% 15%,#fffdf2,#f8e9cf 70%,#e8d3ae);color:#7d2844;box-shadow:inset 0 0 0 14px #fffaec,inset 0 0 0 16px #ccab75}
+.back-flower{font-size:35px;color:#b28442}.back-number{font-style:italic;font-size:clamp(30px,5vw,75px);color:#b48535;line-height:1}.back-name{font-style:italic;font-size:clamp(22px,3.5vw,53px);line-height:1.1}.back-caption{font:11px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase}
+.book-spine{position:absolute;top:0;left:calc(50% - 2px);height:100%;width:4px;z-index:4;background:linear-gradient(90deg,rgba(87,47,23,.25),rgba(255,250,223,.35),rgba(79,40,22,.17));pointer-events:none}
+[data-phase="eject"] .envelope,[data-phase="unfold"] .envelope,[data-phase="opened"] .envelope{transform:translate3d(-50%,calc(-50% + 220px),-150px) rotateY(13deg) rotateX(14deg) scale(.70);opacity:0;filter:drop-shadow(0 25px 15px rgba(6,2,10,.2));pointer-events:none}
+[data-phase="eject"] .envelope-nudge,[data-phase="unfold"] .envelope-nudge,[data-phase="opened"] .envelope-nudge{display:none}
+[data-phase="eject"] .book{transform:translate3d(-75%,calc(-50% - 28px),0) rotateY(0deg) scale(.87);opacity:1}
+[data-phase="unfold"] .book,[data-phase="opened"] .book{transform:translate3d(-50%,-50%,0) rotateY(0deg) scale(1);opacity:1}
+[data-phase="unfold"] .left-page,[data-phase="opened"] .left-page{transform:rotateY(0deg)}
+[data-phase="unfold"] .book{z-index:6}
+[data-phase="opened"] .book{z-index:6;pointer-events:auto;cursor:zoom-in;filter:drop-shadow(0 22px 28px rgba(13,5,13,.54))}
+[data-phase="opened"] .halo{transform:translate(-50%,-50%) scale(1.5);opacity:.47}
+.controls{position:relative;z-index:15;margin:0 auto 17px;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;padding:0 18px}
+.primary{min-width:232px;border:1px solid #dfbb7a;padding:15px 24px;border-radius:100px;background:linear-gradient(135deg,#f2d89c 0%,#c59750 52%,#eecf8d 100%);color:#4b2633;box-shadow:0 7px 25px rgba(0,0,0,.18),inset 0 1px 1px #fff3c7;font:700 12px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;transition:transform .2s,box-shadow .2s}
+.primary:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.primary:disabled{opacity:.66;cursor:wait}.primary .arrow{margin-left:11px;font-size:16px}
+.secondary{border:1px solid rgba(248,220,177,.44);border-radius:100px;padding:14px 21px;background:rgba(255,244,220,.06);color:#fce3b9;font:700 11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;transition:background .2s}
+.secondary:hover{background:rgba(255,244,220,.13)}
+.secondary[hidden]{display:none}
+.mini-note{z-index:2;text-align:center;color:#e1b5b0;font:12px Arial,sans-serif;letter-spacing:.1em;margin:0 15px 15px;line-height:1.65;transition:opacity .4s}
+.foot{width:100%;text-align:center;z-index:1;font:11px Arial,sans-serif;color:#d9b5aa;letter-spacing:.22em;text-transform:uppercase;padding:0 15px 18px}
+.divider-floral{font-family:Georgia,serif;color:#ebc17e;margin:0 10px}
+.lightbox{position:fixed;z-index:100;inset:0;display:none;flex-direction:column;background:rgba(18,10,15,.96);backdrop-filter:blur(15px);color:#fff}
+.lightbox.visible{display:flex}
+.lightbox-bar{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;gap:10px;flex-shrink:0;border-bottom:1px solid rgba(240,201,137,.18)}
+.lightbox-bar span{font:12px Arial,sans-serif;letter-spacing:.15em;color:#f4dba9}
+.lightbox-bar button{border:1px solid #d0ad73;background:transparent;border-radius:50%;color:#fff3d5;font-size:22px;width:41px;height:41px;display:grid;place-items:center}
+.lightbox-scroller{overflow:auto;flex:1;display:flex;align-items:flex-start;justify-content:flex-start;touch-action:pan-x pan-y;scrollbar-color:#bc9c6c transparent}
+.lightbox-scroller img{display:block;width:max(100%,1050px);height:auto;margin:auto;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.lightbox-hint{text-align:center;padding:12px;font:12px Arial,sans-serif;color:#d8bd9d;flex-shrink:0}
+@media(max-width:740px){
+ .top-bar{padding:14px 16px}.monogram .seal{width:32px;height:32px;font-size:18px}.monogram{font-size:11px}
+ .music-toggle{padding:9px 12px}.music-toggle .music-text{font-size:11px}
+ .intro{margin-top:8px}.eyebrow{letter-spacing:.25em;font-size:9px;margin:5px 0 10px}h1{font-size:clamp(27px,6.4vw,39px)}
+ .intro-sub{font-size:11px;margin:10px 0 0;letter-spacing:.07em}
+ .stage{height:clamp(365px,56dvh,530px);min-height:350px;flex:1 0 auto}
+ .envelope{width:min(66vw,31dvh,284px)}
+ .book{width:min(94vw,calc((100dvh - 245px)*1.413))}
+ .controls{gap:9px;margin-bottom:10px}.primary{min-width:213px;padding:14px 18px}.secondary{padding:13px 17px}
+ .mini-note{font-size:11px;margin:0 8px 11px}.foot{font-size:9px;letter-spacing:.12em;padding-bottom:18px}
+ .back-flower{font-size:18px}.back-caption{font-size:8px}.left-page-back{gap:4px;border-width:2px;box-shadow:inset 0 0 0 5px #fff8e6,inset 0 0 0 6px #bc955e}
+ .back-number{font-size:23px}.back-name{font-size:15px}
+ .lightbox-bar{padding:10px 13px}.lightbox-bar span{letter-spacing:.02em;font-size:11px}.lightbox-hint{font-size:11px}
+}
+@media(max-height:700px) and (min-width:741px){.stage{height:58dvh;min-height:340px}.intro-sub{margin-top:7px}.eyebrow{margin-bottom:7px}.top-bar{padding-top:11px;padding-bottom:7px}.controls{margin-bottom:7px}.foot{padding-bottom:9px}}
+@media(max-height:680px) and (max-width:740px){.intro-sub{display:none}.stage{height:clamp(295px,52dvh,430px);min-height:290px}.envelope{width:min(52vw,31dvh,225px)}.book{width:min(92vw,calc((100dvh - 190px)*1.413))}.top-bar{padding-top:8px;padding-bottom:6px}.mini-note{margin-bottom:6px}.foot{padding-bottom:7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body data-phase="closed">
+<div class="ambient" id="ambient" aria-hidden="true"></div>
+<main class="page">
+ <div class="top-bar">
+  <div class="monogram"><span class="seal">S</span><span>70 AÑOS</span></div>
+  <button class="music-toggle" type="button" id="musicToggle" aria-label="Activar o desactivar la música" aria-pressed="false">
+   <svg class="off-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5ZM16 9l5 6m0-6-5 6"/></svg>
+   <svg class="on-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg>
+   <span class="music-text" id="musicLabel">Activar música</span>
+  </button>
+ </div>
+ <section class="intro" aria-label="Invitación de cumpleaños">
+  <div class="eyebrow">Una celebración inolvidable</div>
+  <h1>Los <em>70 años</em> de Silvia</h1>
+  <p class="intro-sub">Hay momentos que merecen celebrarse juntos</p>
+ </section>
+ <section class="stage" id="stage" aria-label="Invitación animada">
+  <div class="halo" aria-hidden="true"></div>
+  <div class="book" id="book" aria-label="Invitación interior de Silvia" role="img">
+   <div class="right-page"><img class="page-image" alt="" draggable="false"></div>
+   <div class="left-page">
+    <div class="left-page-front"><img class="page-image" alt="" draggable="false"></div>
+    <div class="left-page-back" aria-hidden="true">
+     <span class="back-flower">✿</span><span class="back-number">70</span><span class="back-name">Silvia</span><span class="back-caption">Una vida para celebrar</span>
+    </div>
+   </div>
+   <div class="book-spine"></div>
+  </div>
+  <div class="envelope" id="envelope" role="button" aria-label="Haz clic para abrir la invitación" tabindex="0">
+   <img src="assets/sobre.png" alt="Sobre blanco con letras doradas y gran lazo dorado; Mis 70 años Silvia" draggable="false" id="envelopeImage">
+   <span class="envelope-nudge" aria-hidden="true">✧ Toca para descubrir ✧</span>
+  </div>
+ </section>
+ <div class="controls">
+  <button class="primary" type="button" id="openBtn">Abrir mi invitación <span class="arrow">↗</span></button>
+  <button class="secondary" type="button" id="zoomBtn" hidden>⤢ &nbsp; Ver en grande</button>
+ </div>
+ <p class="mini-note" id="note" aria-live="polite">Toca el sobre para descubrir una invitación preparada con mucho cariño.</p>
+ <footer class="foot">07 de noviembre de 2026 <span class="divider-floral">✦</span> San Jerónimo de Tunán</footer>
+</main>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Invitación completa ampliada" aria-hidden="true">
+ <div class="lightbox-bar"><span>LOS 70 AÑOS DE SILVIA · INVITACIÓN</span><button id="closeZoom" type="button" aria-label="Cerrar la ampliación">×</button></div>
+ <div class="lightbox-scroller" id="lightboxScroll"><img src="assets/diptico.png" alt="Invitación completa con la fotografía original de Silvia, la fecha, la hora y el lugar de la celebración" id="largeInvitation"></div>
+ <div class="lightbox-hint">Desliza para recorrer la tarjeta · Gira el celular para verla más grande</div>
+</div>
+<audio id="bgAudio" preload="none" loop src="assets/musica.mp3"></audio>
+<script>
+(()=>{
+ document.querySelectorAll('.page-image').forEach(img=>{img.src=document.getElementById('largeInvitation').src});
+ const body=document.body, btn=document.getElementById('openBtn'), env=document.getElementById('envelope'), book=document.getElementById('book');
+ const zoomBtn=document.getElementById('zoomBtn'),lightbox=document.getElementById('lightbox'),closeZoom=document.getElementById('closeZoom');
+ const audio=document.getElementById('bgAudio'),toggle=document.getElementById('musicToggle'),musicLabel=document.getElementById('musicLabel'),note=document.getElementById('note');
+ let phase='closed',musicOn=false,opening=false,playToken=0;
+ const timers=[];
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const stage=document.getElementById('stage');
+ function particles(){const el=document.getElementById('ambient');let html='';for(let i=0;i<44;i++){let x=(i*71.19+9)%100,y=(i*39.73+3)%100;html+=`<i class="particle" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--dur:${(2.1+(i%8)*.55).toFixed(1)}s;--delay:${(-i*.31).toFixed(1)}s"></i>`}el.insertAdjacentHTML('beforeend',html)}particles();
+ function setPhase(s){phase=s;body.dataset.phase=s}
+ function musicUI(){toggle.classList.toggle('playing',musicOn);toggle.setAttribute('aria-pressed',String(musicOn));musicLabel.textContent=musicOn?'Pausar música':'Activar música'}
+ function rampAudio(from,to,duration){const token=++playToken;const start=performance.now();function step(t){if(token!==playToken)return;const u=Math.min((t-start)/duration,1);audio.volume=Math.max(0,Math.min(1,from+(to-from)*(u*u*(3-2*u))));if(u<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+ async function startMusic(){try{audio.volume=0;await audio.play();musicOn=true;musicUI();rampAudio(0,.65,1800)}catch(e){musicOn=false;musicUI();note.textContent='Puedes activar la música desde el botón superior.'}}
+ function toggleMusic(){if(musicOn){++playToken;audio.pause();musicOn=false;musicUI()}else{startMusic()}}
+ toggle.addEventListener('click',toggleMusic);
+ function clearTimers(){while(timers.length)clearTimeout(timers.pop())}
+ function openInvitation(){if(opening)return;opening=true;clearTimers();btn.disabled=true;btn.innerHTML='Un momento especial <span class="arrow">✧</span>';zoomBtn.hidden=true;note.textContent='La magia comienza…';
+ if(!musicOn)startMusic();setPhase('eject');
+ const t1=reduced?100:2050,t2=reduced?190:4520;
+ timers.push(setTimeout(()=>{setPhase('unfold');note.textContent='Con todo nuestro cariño, para ti…'},t1));
+ timers.push(setTimeout(()=>{setPhase('opened');opening=false;btn.disabled=false;btn.innerHTML='Volver a ver <span class="arrow">↻</span>';zoomBtn.hidden=false;note.textContent='Sábado 7 de noviembre · 9:00 a. m. · Iglesia Matriz de San Jerónimo de Tunán';},t2));
+ }
+ function handleOpen(){if(phase==='closed'){openInvitation();return}if(!opening){setPhase('closed');opening=false;btn.innerHTML='Abrir mi invitación <span class="arrow">↗</span>';zoomBtn.hidden=true;note.textContent='Toca el sobre para descubrir una invitación preparada con mucho cariño.';requestAnimationFrame(()=>setTimeout(openInvitation,reduced?25:420))}}
+ btn.addEventListener('click',handleOpen);env.addEventListener('click',()=>{if(phase==='closed')openInvitation()});env.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&phase==='closed'){e.preventDefault();openInvitation()}});
+ function showZoom(){if(phase!=='opened')return;lightbox.classList.add('visible');lightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.getElementById('lightboxScroll').scrollLeft=0;closeZoom.focus()}
+ function hideZoom(){lightbox.classList.remove('visible');lightbox.setAttribute('aria-hidden','true');document.body.style.overflow='';zoomBtn.focus()}
+ zoomBtn.addEventListener('click',showZoom);book.addEventListener('click',showZoom);closeZoom.addEventListener('click',hideZoom);lightbox.addEventListener('click',e=>{if(e.target===lightbox)hideZoom()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&lightbox.classList.contains('visible'))hideZoom()});
+ audio.addEventListener('ended',()=>{if(musicOn){audio.currentTime=0;audio.play().catch(()=>{})}});
+})();
+</script>
+</body>
+</html>
